@@ -1,5 +1,50 @@
-<mat-grid-list class="employee-list" cols="4">
+<!-- <form [formGroup] = "service.form" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+     <div class="controles-container">
+       <input type="hidden" formControlName="$key">
+       <mat-form-field>
+         <input formControlName="firstName" matInput placeholder="First Name">
+       </mat-form-field>
+       <mat-form-field>
+         <input formControlName="lastName" matInput placeholder="Last Name">
+       </mat-form-field>
+       <mat-form-field>
+         <input formControlName="compensation" matInput placeholder="Compensation">
+       </mat-form-field>
+       <mat-form-field>
+         <input formControlName="position" matInput placeholder="Position">
+       </mat-form-field>
+       <mat-form-field>
+         <input formControlName="id" matInput placeholder="Id">
+       </mat-form-field>
+     </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+    </mat-grid-tile>
+   </mat-grid-list>
+   </form> -->
+
+
+<mat-grid-list class="employee-list" cols="1" rowHeight="30px:10px">
+  <div class="d-flex">
+    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-light" (click)="onCreate()">Add Employee</button>
+  </div>
   <mat-grid-tile *ngFor="let emp of employees">
     <app-employee [employee]="emp"></app-employee>
   </mat-grid-tile>
 </mat-grid-list>
+
+
+
+<!-- Search: <input id="input" type="text" size="30" pInputText [(ngModel)]="listFilterBy">
+<button pButton type="button" label="Add New" style="margin-right: .25em" (click)="addEmployee()"></button>
+<br/><br/>
+<p-panel header="Employee Management System">
+  <div *ngFor='let employee of filteredList'>
+    <app-employeedetail [employee]='employee' (refreshEmployeeList)="refreshLIst()">
+    </app-employeedetail>
+  </div>
+</p-panel> -->
+
+

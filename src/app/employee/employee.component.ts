@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-
+import {EmployeeService} from'../employee.service';
 import {Employee} from '../employee';
 
 @Component({
@@ -10,6 +10,13 @@ import {Employee} from '../employee';
 export class EmployeeComponent {
   @Input() employee: Employee;
 
-  constructor() {
+  // currentVal="";
+  // getVal(val)
+  // {
+  //   console.warn(val)
+  //   this.currentVal=val
+  // }
+  constructor(private employeeService: EmployeeService) {
   }
+
 }

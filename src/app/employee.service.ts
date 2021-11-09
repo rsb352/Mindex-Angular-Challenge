@@ -1,16 +1,32 @@
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {from, Observable, throwError} from 'rxjs';
 import {catchError, flatMap} from 'rxjs/operators';
+import { FormGroup, FormControl } from "@angular/forms";
 
 import {Employee} from './employee';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class EmployeeService {
   private url = '/api/employees';
 
   constructor(private http: HttpClient) {
   }
+
+  form: FormGroup = new FormGroup({
+    $key: new FormControl(null),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    position: new FormControl(''),
+    compensation: new FormControl(''),
+    id: new FormControl(''),
+  });
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+  };
 
   getAll(): Observable<Employee> {
     return this.http.get<Employee[]>(this.url)

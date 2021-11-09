@@ -1,12 +1,96 @@
 <mat-card class="employee">
   <mat-card-header>
-    <mat-card-title>{{employee.lastName}}, {{employee.firstName}}</mat-card-title>
-    <mat-card-subtitle>{{employee.id}}</mat-card-subtitle>
+  <mat-card-title>
+      {{employee.lastName}}, {{employee.firstName}}
+  </mat-card-title>
+    <mat-card-subtitle>Employee ID:{{employee.id}} Direct Reports:{{currentVal}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <dl>
       <dt>Job Title</dt>
       <dd>{{employee.position}}</dd>
     </dl>
-  </mat-card-content>
+    <dl>
+      <dt>Compensation</dt>
+      <dd>${{employee.compensation}}K</dd>
+    </dl>
+    <h2>Direct Reports:</h2>
+    <table class="table" ng-if="employee.directReports?.length > 0">
+      <tr *ngFor="let employee of employee.directReports; let i = index" scope="col" style="border: none;">
+      <td>{{employee}}</td>
+        <button class="btn btn-outline-danger" style="float:right;">Delete</button>
+        <button  class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal" style="float:right;">Edit</button>
+      </tr>
+    </table>
+    </mat-card-content>
 </mat-card>
+
+
+    <!-- <form [formGroup] = "service.form" class="normal-form">
+   <mat-grid-list cols="2" rowHeight="300px">
+     <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$key">
+        <mat-form-field>
+          <input formControlName="firstName" matInput placeholder="First Name">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="lastName" matInput placeholder="Last Name">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="compensation" matInput placeholder="Compensation">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="position" matInput placeholder="Position">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="id" matInput placeholder="Id">
+        </mat-form-field>
+      </div>
+     </mat-grid-tile>
+     <mat-grid-tile>
+     </mat-grid-tile>
+    </mat-grid-list>
+    </form> -->
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Emloyee Detail</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">firstName</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">lastName</label>
+            <input type="text" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <th>Direct Reports:</th> -->
+
+    <!-- <input type="number" (keyup)="getVal($event.target.value)" /> -->
+    <!-- <p-footer>
+      <button pButton type="button" Label="Edit" icon="pi pi-check" style="margin-right: .25em" (click)="editEmployee()"></button>
+      <button pButton type="button" Label="Delete" icon="pi pi-times" class="ui-button-secondary" (click)="deleteEmployee()"></button>
+    </p-footer> -->
+
+
+
+
+

@@ -46,6 +46,7 @@ describe('EmployeeComponent', () => {
       id: 1,
       firstName: 'first',
       lastName: 'last',
+      compensation: 0,
       position: 'jobTitle'
     };
 
