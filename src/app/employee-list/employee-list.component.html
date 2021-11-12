@@ -27,9 +27,9 @@
 
 
 <mat-grid-list class="employee-list" cols="1" rowHeight="30px:10px">
-  <div class="d-flex">
+  <!-- <div class="d-flex">
     <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-light" (click)="onCreate()">Add Employee</button>
-  </div>
+  </div> -->
   <mat-grid-tile *ngFor="let emp of employees">
     <app-employee [employee]="emp"></app-employee>
   </mat-grid-tile>

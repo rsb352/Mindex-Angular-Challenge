@@ -2,7 +2,6 @@
   padding: 500px;
 }
 
-
 .mat-card-title{
   text-align: left;
   color: lightseagreen;
@@ -19,6 +18,7 @@ tr:nth-child(even){
 
 tr:hover {
   background-color: #ddd;
+  cursor: pointer;
 }
 
 th {

@@ -3,7 +3,7 @@
   <mat-card-title>
       {{employee.lastName}}, {{employee.firstName}}
   </mat-card-title>
-    <mat-card-subtitle>Employee ID:{{employee.id}} Direct Reports:{{currentVal}}</mat-card-subtitle>
+    <mat-card-subtitle>Employee ID:{{employee.id}} Direct Reports:{{directReports}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <dl>
@@ -15,18 +15,50 @@
       <dd>${{employee.compensation}}K</dd>
     </dl>
     <h2>Direct Reports:</h2>
-    <table class="table" ng-if="employee.directReports?.length > 0">
-      <tr *ngFor="let employee of employee.directReports; let i = index" scope="col" style="border: none;">
-      <td>{{employee}}</td>
-        <button class="btn btn-outline-danger" style="float:right;">Delete</button>
-        <button  class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal" style="float:right;">Edit</button>
+    <dd *ngIf="!directReportsData || directReportsData.length === 0"><span>This employee has no reports.</span></dd>
+    <table class="table">
+      <tr *ngFor="let emp of directReportsData" scope="col" style="border: none;">
+      <td>
+        <span>{{emp.firstName}} {{emp.lastName}}, {{emp.position}}</span>
+      </td>
+        <mat-icon (click)="openDialog1()" data-toggle="modal" data-target="#exampleModal" style="float:right;">delete</mat-icon>
+        <mat-icon (click)="openDialog()" data-toggle="modal" data-target="#exampleModal" style="float:right;">edit</mat-icon>
       </tr>
     </table>
     </mat-card-content>
 </mat-card>
 
 
-    <!-- <form [formGroup] = "service.form" class="normal-form">
+<ng-template #content let-modal>
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">[name]</h5>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <canvas id="myChart" width="1000" height="500"></canvas>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">any action</button>
+      </div>
+    </div>
+  </div>
+
+</ng-template>
+
+
+<!-- <ng-template #edit let-modal>
+  <div class="modal-header" id="editReport">
+      <center><h1 class="editModaltitle">UPDATE COMPENSATION</h1></center>
+  </div>
+</ng-template> -->
+
+
+   <!-- <form [formGroup] = "service.form" class="normal-form">
    <mat-grid-list cols="2" rowHeight="300px">
      <mat-grid-tile>
       <div class="controles-container">
