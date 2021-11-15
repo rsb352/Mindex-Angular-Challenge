@@ -4,13 +4,13 @@
     <mat-grid-tile>
       <div class="controles-container">
         <mat-form-field>
-          <input matInput placeholder="First Name" [(ngModel)]="data.firstName">
+          <input matInput placeholder="First Name" [(ngModel)]="data.firstName" readonly>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Last Name" [(ngModel)]="data.lastName">
+          <input matInput placeholder="Last Name" [(ngModel)]="data.lastName" readonly>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Title" [(ngModel)]="data.position">
+          <input matInput placeholder="Title" [(ngModel)]="data.position" readonly>
         </mat-form-field>
         <mat-form-field>
           <input fcdkFocusInitial matInput placeholder="Compensation" [(ngModel)]="data.compensation">

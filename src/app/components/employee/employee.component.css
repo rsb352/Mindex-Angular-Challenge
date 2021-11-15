@@ -87,3 +87,7 @@
 ::ng-deep mat-dialog-container .employee-dialog .mat-dialog-actions button:hover {
   color: #ffffff;
 }
+
+::ng-deep mat-dialog-container .employee-dialog input:read-only {
+  color: #cccccc;
+}

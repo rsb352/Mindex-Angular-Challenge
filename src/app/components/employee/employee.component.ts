@@ -61,7 +61,8 @@ export class EmployeeComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.deleteEmployee.emit(result);
+        this.employee.directReports = this.employee.directReports.filter(report => report !== result.id);
+        this.deleteEmployee.emit(this.employee);
       } else {
         console.log('The dialog was closed');
       }

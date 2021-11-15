@@ -26,12 +26,8 @@ export class EmployeeListComponent implements OnInit {
     this.getAllEmployees();
   }
 
-  deleteEmployee(emp) {
-    this.employeeService.remove(emp)
-      .pipe(
-        catchError(this.handleError.bind(this))
-      ).subscribe();
-    this.getAllEmployees();
+  deleteEmployee(data) {
+    this.updateEmployee(data);
   }
 
   private getAllEmployees() {
