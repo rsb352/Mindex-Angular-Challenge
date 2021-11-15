@@ -1,0 +1,89 @@
+.employee-container ::ng-deep .mat-card-header .mat-card-header-text .mat-card-title{
+  text-align: left;
+  color: #0066BB;
+  margin-bottom: 20px;
+}
+
+.employee-container ::ng-deep .mat-card-content dl {
+  margin-top: 20px;
+}
+
+.employee-container .mat-card-header {
+  border-bottom: 1px solid #cccccc;
+}
+
+.employee-container {
+  border-bottom: 1px solid #cccccc;
+}
+
+.employee-container .mat-card {
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.employee-container th {
+  border: 1px solid #ddd;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #0066BB;
+  color: white;
+}
+
+.employee-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.employee-container tr:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.employee-container tr {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.employee-container h2 {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: left;
+  width: 900px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.employee-container ::ng-deep mat-icon:first-of-type {
+  margin-right: 20px;
+}
+
+.employee-container ::ng-deep mat-icon:hover {
+  color: #0066BB;
+}
+
+::ng-deep mat-dialog-container {
+  overflow: hidden!important;
+}
+
+::ng-deep mat-dialog-container .employee-dialog .mat-dialog-title {
+  font-weight: bold;
+  color: #0066BB;
+  text-align: center;
+}
+
+::ng-deep mat-dialog-container .employee-dialog .mat-grid-tile,
+::ng-deep mat-dialog-container .employee-dialog .mat-form-field {
+  width: 100%!important;
+}
+
+::ng-deep mat-dialog-container .employee-dialog .mat-dialog-actions {
+  justify-content: flex-end;
+  margin-bottom: -10px;
+}
+
+::ng-deep mat-dialog-container .employee-dialog .mat-dialog-actions button:hover {
+  color: #ffffff;
+}

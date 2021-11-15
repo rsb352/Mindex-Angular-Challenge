@@ -1,0 +1,16 @@
+<div class="employee-dialog">
+  <h3 mat-dialog-title class="mat-dialog-title">DELETE DIRECT REPORT</h3>
+  <mat-grid-list cols="2" rowHeight="200px">
+    <mat-grid-tile>
+     <span>Permanently delete direct report?
+       <span><b>{{data.firstName}} {{data.lastName}}</b></span>
+       <br><br>
+       This action cannot be undone
+     </span>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div mat-dialog-actions>
+    <button mat-button class="btn btn-outline-danger" (click)="closeDialog('delete')">Ok</button>
+    <button mat-button class="btn btn-outline-success" (click)="closeDialog('cancel')">Cancel</button>
+  </div>
+</div>

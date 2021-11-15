@@ -1,0 +1,37 @@
+<mat-card class="employee-container">
+  <mat-card-header>
+    <mat-card-title>
+        {{employee.lastName}}, {{employee.firstName}}
+    </mat-card-title>
+    <mat-card-subtitle>Employee ID:{{employee.id}} Direct Reports:{{directReports}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <dl>
+      <dt>Job Title</dt>
+      <dd>{{employee.position}}</dd>
+    </dl>
+    <dl>
+      <dt>Compensation</dt>
+      <dd>${{employee.compensation}}K</dd>
+    </dl>
+    <h2>Direct Reports:</h2>
+    <dd *ngIf="!directReportsData || directReportsData.length === 0"><span>This employee has no reports.</span></dd>
+    <table class="table">
+      <tr *ngFor="let emp of directReportsData" scope="col">
+      <td>
+        <span>{{emp.firstName}} {{emp.lastName}}, {{emp.position}}</span>
+      </td>
+        <div>
+          <mat-icon (click)="openDialog1(emp)" data-toggle="modal" data-target="#exampleModal">delete</mat-icon>
+          <mat-icon (click)="openDialog(emp)" data-toggle="modal" data-target="#exampleModal">edit</mat-icon>
+        </div>
+      </tr>
+    </table>
+    </mat-card-content>
+</mat-card>
+
+
+
+
+

@@ -1,0 +1,13 @@
+<div class="employee-list-container">
+  <div class="employee-list-title">
+    <h1>Mindex Coding Challenge</h1>
+  </div>
+
+  <mat-grid-list class="employee-list" cols="1" rowHeight="30px:10px">
+    <mat-grid-tile *ngFor="let emp of employees">
+      <app-employee [employee]="emp" (deleteEmployee)="deleteEmployee($event)" (updateEmployee)="updateEmployee($event)"></app-employee>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+

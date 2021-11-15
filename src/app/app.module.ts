@@ -7,8 +7,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {AppComponent} from './app.component';
 import {BackendlessMockService} from './backendless-mock.service';
-import {EmployeeComponent} from './employee/employee.component';
-import {EmployeeListComponent} from './employee-list/employee-list.component';
+import {EmployeeComponent} from './components/employee/employee.component';
+import {DialogOverviewExampleDialog, DialogOverviewExampleDialog1} from './components/employee/employee.component';
+import {EmployeeListComponent} from './components/employee-list/employee-list.component';
 import {EmployeeService} from './employee.service';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -20,13 +21,13 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    DialogOverviewExampleDialog,
+    DialogOverviewExampleDialog1
   ],
   imports: [
     BrowserModule,
@@ -53,7 +54,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent],
-  entryComponents:[EmployeeComponent]
+  entryComponents: [EmployeeComponent]
 })
 export class AppModule {
 }
