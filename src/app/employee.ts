@@ -8,21 +8,21 @@ export class Employee {
 
 //I added constructor for employees
 
-  // constructor(
-  //   id: number,
-  //   firstName: string,
-  //   lastName: string,
-  //   position: string,
-  //   compensation: number,
-  //   directReports?: Array<number>
-  // ) {
-  //     this.id = id;
-  //     this.firstName = firstName;
-  //     this.lastName = lastName;
-  //     this.position = position;
-  //     this.compensation = compensation;
-  //     this.directReports = directReports;
+  constructor(
+    id: number,
+    firstName: string,
+    lastName: string,
+    position: string,
+    compensation: number,
+    directReports?: Array<number>
+  ) {
+      this.id = id;
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.position = position;
+      this.compensation = compensation;
+      this.directReports = directReports;
 
-  //   }
+    }
   //my addition till here
 }
