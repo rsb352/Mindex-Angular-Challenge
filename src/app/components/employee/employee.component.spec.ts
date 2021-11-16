@@ -1,5 +1,7 @@
 import {async, TestBed} from '@angular/core/testing';
-import {Component} from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import {EmployeeComponent} from './employee.component';
 
@@ -28,6 +30,7 @@ const employeeServiceSpy = jasmine.createSpyObj('EmployeeService', ['getAll', 'g
 describe('EmployeeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule, MatDialogModule],
       declarations: [
         EmployeeComponent,
         CardComponent,
@@ -36,6 +39,7 @@ describe('EmployeeComponent', () => {
         CardSubtitleComponent,
         CardContentComponent
       ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     }).compileComponents();
   }));
 
@@ -51,5 +55,23 @@ describe('EmployeeComponent', () => {
     };
 
     expect(comp).toBeTruthy();
+  }));
+
+  it('should set the direct reports data', async(() => {
+    const fixture = TestBed.createComponent(EmployeeComponent);
+    const comp = fixture.debugElement.componentInstance;
+    comp.employee = {};
+    comp.employee.directReports = undefined;
+    comp.ngOnInit();
+    expect(comp.directReportsData.length).toEqual(0);
+  }));
+
+  it('should set the direct reports', async(() => {
+    const fixture = TestBed.createComponent(EmployeeComponent);
+    const comp = fixture.debugElement.componentInstance;
+    comp.employee = {};
+    comp.employee.directReports = undefined;
+    comp.ngOnInit();
+    expect(comp.directReports).toEqual(0);
   }));
 });

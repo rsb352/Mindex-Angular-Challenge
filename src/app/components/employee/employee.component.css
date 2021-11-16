@@ -1,4 +1,4 @@
-.employee-container ::ng-deep .mat-card-header .mat-card-header-text .mat-card-title{
+.employee-container ::ng-deep .mat-card-header .mat-card-header-text .mat-card-title {
   text-align: left;
   color: #0066BB;
   margin-bottom: 20px;
@@ -6,6 +6,11 @@
 
 .employee-container ::ng-deep .mat-card-content dl {
   margin-top: 20px;
+  margin-right: 40px;
+}
+
+.employee-container ::ng-deep .mat-card-content dd.employee-no-reports {
+  padding: 10px 20px;
 }
 
 .employee-container .mat-card-header {
@@ -13,7 +18,8 @@
 }
 
 .employee-container {
-  border-bottom: 1px solid #cccccc;
+  border: 0;
+  box-shadow: unset;
 }
 
 .employee-container .mat-card {
@@ -23,19 +29,19 @@
 
 .employee-container th {
   border: 1px solid #ddd;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
   background-color: #0066BB;
   color: white;
 }
 
 .employee-container tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #F8F9FA;
 }
 
 .employee-container tr:hover {
-  background-color: #ddd;
+  background-color: #E0E0E0;
   cursor: pointer;
 }
 
@@ -44,16 +50,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 20px 5px 15px;
 }
 
 .employee-container h2 {
-  background-color: #000000;
+  background-color: #6C757D;
   color: #ffffff;
   text-align: left;
-  width: 900px;
+  width: 980px;
   padding-left: 20px;
   font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.employee-container ::ng-deep mat-icon {
+  height: 18px;
+  width: 18px;
 }
 
 .employee-container ::ng-deep mat-icon:first-of-type {
@@ -69,7 +82,7 @@
 }
 
 ::ng-deep mat-dialog-container .employee-dialog .mat-dialog-title {
-  font-weight: bold;
+  font-weight: 500;
   color: #0066BB;
   text-align: center;
 }
@@ -84,10 +97,29 @@
   margin-bottom: -10px;
 }
 
+::ng-deep mat-dialog-container .employee-dialog .mat-dialog-actions button {
+  color: #ffffff;
+  background-color: #6C757D;
+}
+
 ::ng-deep mat-dialog-container .employee-dialog .mat-dialog-actions button:hover {
   color: #ffffff;
+  background-color: #0066BB;
 }
 
 ::ng-deep mat-dialog-container .employee-dialog input:read-only {
   color: #cccccc;
+}
+
+::ng-deep mat-dialog-container .employee-dialog mat-grid-tile .controles-container {
+  padding: 0;
+}
+
+::ng-deep mat-dialog-container .employee-dialog .employee-dialog-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+::ng-deep mat-dialog-container .employee-dialog .employee-dialog-logo img {
+  max-width: 100px;
 }

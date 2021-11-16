@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -54,7 +54,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent],
-  entryComponents: [EmployeeComponent]
+  entryComponents: [EmployeeComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {
 }

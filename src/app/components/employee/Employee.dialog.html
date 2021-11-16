@@ -1,19 +1,27 @@
 <div class="employee-dialog">
+  <div class="employee-dialog-logo">
+    <img alt="logo" src="../../../assets/images/MINDEX-RGB-HORIZ.png">
+  </div>
   <h3 mat-dialog-title class="mat-dialog-title">UPDATE COMPENSATION</h3>
   <mat-grid-list cols="2" rowHeight="300px">
     <mat-grid-tile>
       <div class="controles-container">
-        <mat-form-field>
-          <input matInput placeholder="First Name" [(ngModel)]="data.firstName" readonly>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>First Name</mat-label>
+          <input matInput fcdkFocusInitial class="example-right-align" [(ngModel)]="data.firstName" placeholder="First Name" readonly>
         </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Last Name" [(ngModel)]="data.lastName" readonly>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Last Name</mat-label>
+          <input matInput fcdkFocusInitial class="example-right-align" [(ngModel)]="data.lastName" placeholder="Last Name" readonly>
         </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Title" [(ngModel)]="data.position" readonly>
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Position</mat-label>
+          <input matInput fcdkFocusInitial class="example-right-align" [(ngModel)]="data.position" placeholder="Position" readonly>
         </mat-form-field>
-        <mat-form-field>
-          <input fcdkFocusInitial matInput placeholder="Compensation" [(ngModel)]="data.compensation">
+        <mat-form-field appearance="fill" floatLabel="always">
+          <mat-label>Compensation</mat-label>
+          <input matInput fcdkFocusInitial class="example-right-align" [(ngModel)]="data.compensation" placeholder="Compensation">
+          <span matPrefix>$&nbsp;</span>
         </mat-form-field>
       </div>
     </mat-grid-tile>
